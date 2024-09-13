@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test img</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: rgb(28, 19, 58);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        img {
+    height: 200px;
+    width: 200px;
+    filter: drop-shadow(1px 1px 15px rgb(142, 101, 224));
+    animation: my-animation 4s infinite ease-in-out;
+}
+
+@keyframes my-animation {
+    0% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+    100% {
+        transform: translateY(0); 
+    }
+}
+
+
+    </style>
+</head>
+<body>
+
+    <img src="./assets/Untitled27_20240909111403-removebg-preview.png" alt="">
+    
+</body>
+</html>
