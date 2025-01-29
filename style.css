@@ -176,6 +176,12 @@ p {
 .img3:hover{
   filter: drop-shadow(1px 1px 10px rgb(191, 185, 185));
 }
+.img4 img {
+height: 50px;
+width: 50px;
+margin: 15px;
+}
+
 /* .img2{
   color: white;
 }
