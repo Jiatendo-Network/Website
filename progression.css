@@ -1,3 +1,7 @@
+@media (max-width : 600px) {
+    /* CSS for screens below or equal to 600px wide */
+}
+
 * {
     margin: 0;
     padding: 0;
