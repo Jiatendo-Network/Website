@@ -1,3 +1,6 @@
+@media (max-width : 600px) {
+    /* CSS for screens below or equal to 600px wide */
+}
 
 * {
   --primary-color: #3498db;
