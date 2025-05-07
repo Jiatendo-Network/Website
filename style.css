@@ -1,0 +1,621 @@
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #0a58ca;
+  --dark-bg: rgb(21, 21, 54);
+  --card-bg: #2b1954;
+  --text-light: #e2e8f2;
+  --text-muted: #cec5d8;
+  --gradient-bg: linear-gradient(180deg, #3c288b, #2a55d8);
+  --hover-color: #257dfd;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  background: var(--dark-bg);
+  overflow-x: hidden;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-size: clamp(24px, 4vw, 30px);
+}
+
+.nav-link {
+  font-size: clamp(16px, 2.5vw, 18px) !important;
+  font-weight: 500;
+  color: var(--text-light);
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color);
+}
+
+/* Header Section */
+.head-section {
+  background-image: var(--gradient-bg);
+  padding: clamp(2rem, 5vw, 4rem) 0;
+}
+
+.navbar-brand,
+.text-primary {
+  color: var(--text-light) !important;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: #184b98 !important;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color) !important;
+  transform: translateY(-2px);
+}
+
+/* Typography */
+p {
+  font-size: clamp(16px, 2.5vw, 18px);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+}
+
+/* Utility Classes */
+.blue-bg {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.ionicons {
+  color: var(--secondary-color);
+  background-color: #f2f2f2;
+  padding: 10px;
+  height: 30px;
+  width: 30px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tabs */
+.nav-tabs {
+  border: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nav-tabs .active {
+  background-color: var(--secondary-color) !important;
+  border: none;
+  color: #fff !important;
+}
+
+/* Footer */
+.footer-section {
+  background-color: var(--secondary-color) !important;
+  border: none;
+  color: #fff !important;
+  padding: 3rem 0 2rem;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.footer-description {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.footer-links h5 {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  opacity: 0.8;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Footer Social Icons */
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+.footer-social i {
+  font-size: 1.2rem;
+}
+
+/* YouTube icon */
+.footer-social a.youtube:hover {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+/* Twitter/X icon */
+.footer-social a.twitter:hover {
+  background-color: rgba(29, 161, 242, 0.2);
+}
+
+/* GitHub icon */
+.footer-social a.github:hover {
+  background-color: rgba(36, 41, 46, 0.2);
+}
+
+/* Reddit icon */
+.footer-social a.reddit:hover {
+  background-color: rgba(255, 69, 0, 0.2);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Cards */
+.custom-card {
+  border-radius: 10px;
+  background-color: var(--card-bg);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.profile-pic {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1rem;
+}
+
+.profile-pic img {
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.custom-card:hover .profile-pic img {
+  transform: scale(1.1);
+}
+
+.job-title {
+  color: var(--text-muted);
+  font-size: clamp(14px, 2vw, 16px);
+}
+
+.tech-stacks {
+  color: var(--primary-color);
+  font-size: clamp(12px, 1.8vw, 0.9rem);
+  margin-bottom: 1rem;
+}
+
+.github-icon {
+  color: #333;
+  transition: color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.github-icon:hover {
+  color: var(--primary-color);
+}
+
+/* Snowflake Animation */
+.snowflake {
+  position: absolute;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(142, 127, 224);
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Icon Rows */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.icon-row .img {
+  height: 100px;
+  width: 100px;
+}
+
+.img1 img,
+.img3 img,
+.img4 img {
+  height: 50px;
+  width: 50px;
+  margin: 15px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.img2 img {
+  height: 40px;
+  width: 50px;
+  margin: 15px;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.img1:hover,
+.img2:hover,
+.img3:hover,
+.img4:hover {
+  filter: drop-shadow(1px 1px 10px rgb(194, 185, 185));
+  transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .custom-card {
+    padding: 1rem;
+  }
+  
+  .icon-row {
+    justify-content: center;
+  }
+  
+  .img1 img,
+  .img2 img,
+  .img3 img,
+  .img4 img {
+    margin: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .custom-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .img1 img,
+  .img2 img,
+  .img3 img,
+  .img4 img {
+    height: 40px;
+    width: 40px;
+    margin: 8px;
+  }
+}
+
+/* Container adjustments */
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Navbar positioning */
+.navbar {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.head-section {
+  background-image: linear-gradient(180deg, #3c288b, #2a55d8);
+  padding-top: 0;
+}
+
+/* Social Media Icons Row */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Hero Section Styling */
+.hero-section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-section .lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+.hero-section .img-fluid {
+  animation: floatImage 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  transition: transform 0.5s ease;
+  max-width: 105%;
+  display: block;
+  margin: 0 auto;
+}
+
+.hero-section .img-fluid:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .hero-section .img-fluid {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .icon-row {
+    justify-content: center;
+  }
+}
+
+/* Icon Row Styling */
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  animation: fadeInUp 1.4s ease-out;
+}
+
+/* Join Us Button */
+.btn-primary {
+  background-color: #184b98 !important;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn-primary:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.6s ease;
+  z-index: -1;
+}
+
+.btn-primary:hover {
+  background-color: #257dfd !important;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-primary:hover:before {
+  left: 100%;
+}
+
+.btn-primary:active {
+  transform: translateY(-1px);
+}
+
+/* Social Media Icons */
+.img1, .img2, .img3, .img4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.img1 img, .img2 img, .img3 img, .img4 img {
+  height: 25px;
+  width: 25px;
+  transition: transform 0.3s ease;
+}
+
+.img1:hover, .img2:hover, .img3:hover, .img4:hover {
+  transform: translateY(-5px) rotate(5deg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Specific icon colors on hover */
+.img1:hover {
+  background-color: rgba(255, 0, 0, 0.2); /* YouTube red */
+}
+
+.img2:hover {
+  background-color: rgba(29, 161, 242, 0.2); /* Twitter blue */
+}
+
+.img3:hover {
+  background-color: rgba(36, 41, 46, 0.2); /* GitHub dark */
+}
+
+.img4:hover {
+  background-color: rgba(255, 69, 0, 0.2); /* Reddit orange */
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+/* Navbar Toggle Button Fix */
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  padding: 0.5rem;
+  color: white !important;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25) !important;
+  outline: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Mobile Menu Styling */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: rgba(42, 42, 114, 0.95);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-item {
+    margin: 0.5rem 0;
+  }
+  
+  .navbar-nav {
+    align-items: center;
+  }
+}

@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --progress-bar-width: 200px;
+    --progress-bar-height: 200px;
+    --font-size: 2rem;
+}
+
+/* Container for progress bars */
+.progress-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.progress-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.circular-progress {
+    width: var(--progress-bar-width);
+    height: var(--progress-bar-height);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-circle {
+    position: absolute;
+    width: calc(var(--progress-bar-width) - 30px);
+    height: calc(var(--progress-bar-height) - 30px);
+    border-radius: 50%;
+    background-color: #0a58ca;
+}
+
+.percentage {
+    position: relative;
+    font-size: var(--font-size);
+    color: white;
+    margin: 0;
+}
+
+.progress-title {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.progress-details {
+    margin-top: 0.5rem;
+    font-size: 1.1rem;
+}
+
+/* Make the head section take full height on progression page */
+.head-section {
+    min-height: 100vh;
+    padding-bottom: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    :root {
+        --progress-bar-width: 180px;
+        --progress-bar-height: 180px;
+        --font-size: 1.8rem;
+    }
+    
+    .progress-title {
+        font-size: 1.4rem;
+    }
+    
+    .progress-details {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 992px) {
+    :root {
+        --progress-bar-width: 160px;
+        --progress-bar-height: 160px;
+        --font-size: 1.6rem;
+    }
+    
+    .progress-container {
+        gap: 1.5rem;
+    }
+    
+    .progress-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --progress-bar-width: 140px;
+        --progress-bar-height: 140px;
+        --font-size: 1.4rem;
+    }
+    
+    .progress-container {
+        gap: 1rem;
+    }
+    
+    /* Ensure 2 items per row on smaller devices */
+    .progress-item {
+        width: calc(50% - 1rem);
+        margin-bottom: 1.5rem;
+    }
+    
+    .progress-title {
+        font-size: 1.2rem;
+    }
+    
+    .progress-details {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    :root {
+        --progress-bar-width: 120px;
+        --progress-bar-height: 120px;
+        --font-size: 1.2rem;
+    }
+    
+    .progress-container {
+        padding: 1rem;
+    }
+    
+    .progress-item {
+        width: calc(50% - 0.5rem);
+        margin-bottom: 1rem;
+    }
+    
+    .progress-title {
+        font-size: 1.1rem;
+    }
+    
+    .progress-details {
+        font-size: 0.8rem;
+    }
+}
