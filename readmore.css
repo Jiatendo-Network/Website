@@ -1,0 +1,359 @@
+/* Additional styles for the Read More page */
+
+/* Section Cards */
+.section-card {
+  background-color: #1a1240; /* Darker background */
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Improve image visibility */
+.section-image {
+  max-height: 300px;
+  object-fit: contain;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-bg);
+  border-radius: 2px;
+}
+
+.section-content {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.section-content p {
+  margin-bottom: 1.2rem;
+  animation: fadeIn 1s ease-out;
+  letter-spacing: 0.3px;
+}
+
+.section-image {
+  max-height: 300px;
+  object-fit: contain;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  animation: floatImage 6s ease-in-out infinite;
+}
+
+.section-image:hover {
+  transform: scale(1.03);
+}
+
+/* Game Cards */
+.game-card {
+  background-color: rgba(43, 25, 84, 0.7);
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.game-card:hover {
+  transform: translateY(-8px) rotate(2deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.game-image {
+  border-radius: 8px;
+  max-height: 180px;
+  object-fit: cover;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image {
+  transform: scale(1.05);
+}
+
+.game-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.game-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* CTA Section */
+.cta-section {
+  background-image: var(--gradient-bg);
+  padding: 4rem 0;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./assets/image.png');
+  opacity: 0.05;
+  animation: moveBackground 20s linear infinite;
+}
+
+.cta-section h2 {
+  color: white;
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.cta-section .lead {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .btn-primary {
+  background-color: white !important;
+  color: var(--secondary-color) !important;
+  border: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Hero Section Styling */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0;
+}
+
+.hero-image {
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: floatImage 6s ease-in-out infinite;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.hero-image:hover {
+  transform: scale(1.03) rotate(1deg);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.animated-title {
+  animation: fadeInLeft 1s ease-out;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(90deg, var(--primary-color), #6c5ce7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.animated-text {
+  animation: fadeInRight 1.2s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatImage {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes moveBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Scroll Animation Classes */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animations for section cards */
+.section-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.section-card:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.section-card:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.section-card:nth-child(4) {
+  animation-delay: 0.7s;
+}
+
+/* Game cards staggered animations */
+.game-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.game-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.game-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-card {
+    padding: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-content {
+    font-size: 1rem;
+  }
+  
+  .game-card {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-image {
+    margin-top: 2rem;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .section-card {
+    padding: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-image {
+    max-height: 200px;
+  }
+  
+  .cta-section {
+    padding: 3rem 0;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+}
