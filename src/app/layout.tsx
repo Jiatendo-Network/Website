@@ -1,5 +1,13 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
+import Header from "@/components/common/Header"
+import { Righteous } from "next/font/google"
+
+const righteous = Righteous({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-righteous",
+})
 
 export const metadata: Metadata = {
   title: "Jiatendo",
@@ -12,8 +20,13 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={righteous.variable}>
+      <body>
+        <header>
+          <Header />
+        </header>
+        {children}
+      </body>
     </html>
   )
 }

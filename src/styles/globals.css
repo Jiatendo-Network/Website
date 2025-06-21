@@ -2,3 +2,7 @@
 
 @import "tailwindcss";
 
+:root {
+    --violet: #3B288B;
+    --blue: #2D4DCA;
+}

@@ -1,4 +1,4 @@
-// /components/SnowFall.tsx
+// /components/snow/SnowFall.tsx
 import "@/styles/snowfall.css"
 
 const Snowfall = () => {

@@ -1,11 +1,14 @@
-import Snowfall from "@/components/SnowFall"
+import Hero from "@/components/Home/Hero"
+// import Snowfall from "@/components/snow/SnowFall"
 
 export default function Home() {
   return (
     <>
-      <Snowfall />
+      {/* <Snowfall /> */}
       <main>
-        <div>Home</div>
+        <div>
+          <Hero />
+        </div>
       </main>
     </>
   )
