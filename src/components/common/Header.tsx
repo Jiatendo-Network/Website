@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { BiUser, BiMenu, BiX } from "react-icons/bi"
+import { BiMenu, BiX } from "react-icons/bi"
 import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
@@ -17,7 +17,7 @@ const navLinks = [
   },
 ]
 
-const Header = () => {
+const Header = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -47,7 +47,7 @@ const Header = () => {
               </Link>
             )
           )}
-          <BiUser className="border-2 border-white rounded-full scale-110 hover:scale-120 transition" />
+          {children}
         </div>
 
         {/* Hamburger Icon */}
@@ -55,7 +55,7 @@ const Header = () => {
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <BiX size={24} /> : <BiMenu size={24} />}
           </button>
-          <BiUser className="border-2 border-white rounded-full" />
+          {children}
         </div>
       </div>
 

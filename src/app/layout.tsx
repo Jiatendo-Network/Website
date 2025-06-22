@@ -1,5 +1,13 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs"
 import Header from "@/components/common/Header"
 import { Righteous } from "next/font/google"
 import Footer from "@/components/common/Footer"
@@ -21,16 +29,26 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={righteous.variable}>
-      <body>
-        <header>
-          <Header />
-        </header>
-        {children}
-        <footer>
-          <Footer />
-        </footer>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={righteous.variable}>
+        <body>
+          <header>
+            <Header>
+              <SignedOut>
+                <SignInButton />
+                <SignUpButton />
+              </SignedOut>
+              <SignedIn>
+                <UserButton />
+              </SignedIn>
+            </Header>
+          </header>
+          {children}
+          <footer>
+            <Footer />
+          </footer>
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
