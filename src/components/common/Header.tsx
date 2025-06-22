@@ -7,10 +7,14 @@ import { motion, AnimatePresence } from "framer-motion"
 
 const navLinks = [
   { name: "HOME", href: "/" },
-  { name: "PROGRESSION", href: "/" },
-  { name: "BLOG", href: "/" },
+  { name: "PROGRESSION", href: "/progression" },
+  { name: "BLOG", href: "https://jiatendo.pythonanywhere.com/" },
   { name: "FORUM", href: "/" },
-  { name: "DONATION", href: "/", special: true },
+  {
+    name: "DONATION",
+    href: "https://buymeacoffee.com/javierofernandez",
+    special: true,
+  },
 ]
 
 const Header = () => {
