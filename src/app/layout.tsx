@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import "@/styles/globals.css"
 import Header from "@/components/common/Header"
 import { Righteous } from "next/font/google"
+import Footer from "@/components/common/Footer"
 
 const righteous = Righteous({
   subsets: ["latin"],
@@ -26,6 +27,9 @@ export default function RootLayout({
           <Header />
         </header>
         {children}
+        <footer>
+          <Footer />
+        </footer>
       </body>
     </html>
   )
