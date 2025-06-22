@@ -37,23 +37,28 @@ const teamMembers = [
 const Team = () => {
   return (
     <>
-      <div className="bg-[#151536] w-full items-center justify-center px-10 py-4">
+      <div className="bg-[#151536] w-full items-center justify-center p-10">
         <h2 className="text-3xl text-center font-semibold text-white">
           Meet Our Team
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 my-10">
           {teamMembers.map((member, index) => (
-            <TeamCard
+            <div
               key={index}
-              image_url={member.image_url}
-              name={member.name}
-              role={member.role}
-              tech_stach={member.tech_stach}
-              github={member.github}
-            />
+              className={`${index === 3 ? "md:col-start-2" : ""}`}
+            >
+              <TeamCard
+                image_url={member.image_url}
+                name={member.name}
+                role={member.role}
+                tech_stach={member.tech_stach}
+                github={member.github}
+              />
+            </div>
           ))}
         </div>
-        <h2 className="text-3xl text-center font-semibold text-white p-5">
+
+        <h2 className="text-3xl text-center font-semibold text-white px-5 py-10">
           Screenshots
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mx-auto items-center justify-center">

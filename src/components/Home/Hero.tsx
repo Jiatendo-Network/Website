@@ -5,6 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { FaYoutube, FaGithub, FaReddit, FaXTwitter } from "react-icons/fa6"
+import { FaTumblr, FaTwitch } from "react-icons/fa"
 
 const Hero = () => {
   return (
@@ -41,34 +42,48 @@ const Hero = () => {
             </motion.div>
           </div>
         </div>
-        <div className="flex flex-row justify-around items-center w-full px-1 py-4">
-          <a className="p-4 px-5 sm:px-7 rounded-full text-xl text-white font-righteous font-bold bg-[var(--violet)]">
+        <div className="flex flex-col w-full px-1 py-4">
+          <a className="p-4 px-5 w-fit mx-auto sm:px-7 rounded-full text-xl text-white font-righteous font-bold bg-[var(--violet)]">
             Join Us
           </a>
-          <Link
-            className="p-4 rounded-full bg-gray-100/60 text-red-600 text-3xl hover:bg-gray-500 transition"
-            href="https://youtube.com/@jiatendonetwork?si=CVU9LGvpY6QTLl5n"
-          >
-            <FaYoutube />
-          </Link>
-          <Link
-            className="p-4 rounded-full bg-gray-100/60 text-black text-3xl hover:bg-gray-500 transition"
-            href="https://x.com/JiatendoNetwork"
-          >
-            <FaXTwitter />
-          </Link>
-          <Link
-            className="p-4 rounded-full bg-gray-100/60 text-gray-900 text-3xl hover:bg-gray-500 transition"
-            href="https://github.com/Jiatendo-Network"
-          >
-            <FaGithub />
-          </Link>
-          <Link
-            className="p-4 rounded-full bg-gray-100/60 text-orange-600 text-3xl hover:bg-gray-500 transition"
-            href="https://reddit.com/r/JiatendoNetwork/"
-          >
-            <FaReddit />
-          </Link>
+          <div className="w-full p-2 flex flex-row justify-around">
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-red-600 text-3xl hover:bg-gray-500 transition"
+              href="https://youtube.com/@jiatendonetwork?si=CVU9LGvpY6QTLl5n"
+            >
+              <FaYoutube />
+            </Link>
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-black text-3xl hover:bg-gray-500 transition"
+              href="https://x.com/JiatendoNetwork"
+            >
+              <FaXTwitter />
+            </Link>
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-gray-900 text-3xl hover:bg-gray-500 transition"
+              href="https://github.com/Jiatendo-Network"
+            >
+              <FaGithub />
+            </Link>
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-orange-600 text-3xl hover:bg-gray-500 transition"
+              href="https://reddit.com/r/JiatendoNetwork/"
+            >
+              <FaReddit />
+            </Link>
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-purple-500 text-3xl hover:bg-gray-500 transition"
+              href="https://reddit.com/r/JiatendoNetwork/"
+            >
+              <FaTwitch />
+            </Link>
+            <Link
+              className="p-4 rounded-full bg-gray-100/60 text-blue-600 text-3xl hover:bg-gray-500 transition"
+              href="https://www.tumblr.com/jiatendonetwork"
+            >
+              <FaTumblr />
+            </Link>
+          </div>
         </div>
 
         {/* bottom on mobile */}
