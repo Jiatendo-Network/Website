@@ -4,29 +4,30 @@ import Image from "next/image"
 
 const About = () => {
   return (
-    <>
-      <div className="bg-white/5 py-12">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col-reverse md:flex-row items-center gap-8">
-            {/* Left Text Section */}
-            <div className="text-center md:text-left md:w-1/2">
-              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
-                About <span className="text-blue-500">Jiatendo Network</span>
-              </h1>
-              <p className="text-lg text-gray-300 max-w-xl mx-auto md:mx-0 animate-fade-in">
-                Learn more about our mission, technology, and vision for the
-                future of Nintendo online gaming.
-              </p>
-            </div>
+    <div className="bg-gradient-to-b from-[var(--violet)] to-[var(--blue)] text-gray-100 py-20 px-3">
+      <div className="bg-white/5 py-5 rounded-xl">
+        <div className="flex flex-col-reverse md:flex-row items-center gap-8 px-5 py-10">
+          {/* Left Text Section */}
+          <div className="text-center md:text-left md:w-1/2">
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-4 animate-fade-in-up">
+              About <br />{" "}
+              <span className="text-blue-500">Jiatendo Network</span>
+            </h1>
+            <p className="text-lg text-gray-300 max-w-xl mx-auto md:mx-0 animate-fade-in">
+              Learn more about our mission, technology, and vision for the
+              future of Nintendo online gaming.
+            </p>
+          </div>
 
-            {/* Right Image Section */}
-            <div className="md:w-1/2">
-              <Image
-                src="/assets/HNI_0001_1.png"
-                alt="Animal Crossing New Leaf"
-                className="w-full h-auto rounded-lg shadow-lg object-contain"
-              />
-            </div>
+          {/* Right Image Section */}
+          <div className="md:w-1/2 m-3">
+            <Image
+              src="/blog/image1.png"
+              alt="Animal Crossing New Leaf"
+              className="w-full h-auto rounded-lg shadow-lg object-contain"
+              width={400}
+              height={100}
+            />
           </div>
         </div>
       </div>
@@ -50,28 +51,17 @@ const About = () => {
 
           <div className="text-center my-8">
             <Image
-              src="/img28.avif"
+              src="/blog/image2.png"
               alt="Jiatendo Network Operations"
-              className="rounded-xl max-w-full h-[500px] border border-white/10 mx-auto object-cover"
+              className="rounded-xl w-full max-w-[800px] h-auto border border-white/10 mx-auto object-cover"
+              width={800}
+              height={500}
             />
           </div>
 
           <section className="mb-8 p-6 bg-white/10 rounded-xl shadow">
             <h2 className="text-2xl font-bold mb-4">
-              How We Recruit Development Teams?
-            </h2>
-            <p>
-              Discord, of course! There are tons of coding servers where
-              brilliant minds connect, share knowledge, and even look for
-              careers. From Full Stack Developers to specialized experts—our
-              community is filled with talent.
-            </p>
-          </section>
-
-          {/* This section was duplicated, assuming intentional */}
-          <section className="mb-8 p-6 bg-white/10 rounded-xl shadow">
-            <h2 className="text-2xl font-bold mb-4">
-              How We Recruit Development Teams?
+              How Do We Recruit Development Teams?
             </h2>
             <p>
               Discord, of course! There are tons of coding servers where
@@ -110,17 +100,17 @@ const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
                 {
-                  img: "/img25.jpg",
+                  img: "/blog/image3.jpg",
                   title: "Animal Crossing New Leaf",
                   desc: "Experience the thrill of racing with enhanced online capabilities.",
                 },
                 {
-                  img: "/img24.jpg",
+                  img: "/blog/image4.jpg",
                   title: "Mario Kart Wii",
                   desc: "Connect with friends and visit towns with our improved servers.",
                 },
                 {
-                  img: "/img26.jpg",
+                  img: "/blog/image5.jpg",
                   title: "Splatoon",
                   desc: "Battle online with friends using our lag-free connection.",
                 },
@@ -133,6 +123,8 @@ const About = () => {
                     src={game.img}
                     alt={game.title}
                     className="rounded-md h-48 w-full object-cover mb-3"
+                    width={100}
+                    height={100}
                   />
                   <h5 className="text-lg font-semibold">{game.title}</h5>
                   <p className="text-sm text-gray-300 mt-1">{game.desc}</p>
@@ -158,7 +150,7 @@ const About = () => {
           </a>
         </section>
       </div>
-    </>
+    </div>
   )
 }
 

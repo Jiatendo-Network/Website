@@ -15,28 +15,28 @@ const Progression = () => {
           <ProgressCircle percentage={70} title="Website">
             🟢 homepage <br /> 🟢 blog page <br /> 🟢 donation page <br />
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Account server">
+          <ProgressCircle percentage={20} title="Account server">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="NEX">
+          <ProgressCircle percentage={20} title="NEX">
             🟡 Under Review
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Splatoon">
+          <ProgressCircle percentage={20} title="Splatoon">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Friends">
+          <ProgressCircle percentage={20} title="Friends">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Mario Kart 7">
+          <ProgressCircle percentage={20} title="Mario Kart 7">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Mario Kart 8">
+          <ProgressCircle percentage={20} title="Mario Kart 8">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Friends (Wii U)">
+          <ProgressCircle percentage={20} title="Friends (Wii U)">
             🟡 Development
           </ProgressCircle>
-          <ProgressCircle percentage={70} title="Animal Crossing New Leaf">
+          <ProgressCircle percentage={20} title="Animal Crossing New Leaf">
             🟡 Development
           </ProgressCircle>
         </div>

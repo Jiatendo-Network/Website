@@ -1,6 +1,9 @@
+// /components/common/Footer.tsx
+"use client"
+
 import { FaYoutube, FaGithub, FaReddit, FaXTwitter } from "react-icons/fa6"
 import Link from "next/link"
-import Image from "next/image"
+import FooterCard from "@/components/common/FooterCard"
 
 export default function Footer() {
   return (
@@ -97,31 +100,8 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        <div className="relative w-fit">
-          {/* Floating image */}
-          <Image
-            src="/avatar_no_bg_2.png"
-            alt="Floating icon"
-            width={150}
-            height={150}
-            className="absolute -top-30 left-1/2 -translate-x-1/2 z-10"
-          />
-
-          {/* Purple card */}
-          <div className="relative bg-[#6B2DCF] w-full sm:w-[300px] h-auto flex-shrink-0 rounded-xl p-4 pt-10 text-white z-20">
-            <h2 className="font-bold text-xl mb-2 text-center">
-              Want to get the latest updates? <br />
-              Join our Discord server!
-            </h2>
-            <Link
-              className="hover:underline hover:italic cursor-pointer block text-center"
-              href="/"
-            >
-              &gt; Join the Alliance!
-            </Link>
-          </div>
-        </div>
+        {/* Purple card */}
+        <FooterCard />
       </div>
 
       <p className="text-center text-xs mt-10 text-zinc-200">
