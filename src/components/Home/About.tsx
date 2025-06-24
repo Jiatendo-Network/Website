@@ -35,7 +35,7 @@ const About = () => {
           </div>
         </div>
         <Link href="/about">
-          <button className="bg-cyan-700 px-5 py-3 rounded-full shadow-md text-white text-xl font-semibold hover:scale-95 transition-all duration-200 ease-in-out">
+          <button className="btn-shine bg-cyan-700 px-5 py-3 rounded-full shadow-md text-white text-xl font-semibold hover:scale-95 transition-all duration-200 ease-in-out">
             Read More About Us
           </button>
         </Link>

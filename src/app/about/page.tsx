@@ -105,12 +105,12 @@ const About = () => {
                   desc: "Experience the thrill of racing with enhanced online capabilities.",
                 },
                 {
-                  img: "/blog/image4.jpg",
+                  img: "/blog/image5.jpg",
                   title: "Mario Kart Wii",
                   desc: "Connect with friends and visit towns with our improved servers.",
                 },
                 {
-                  img: "/blog/image5.jpg",
+                  img: "/blog/image4.jpg",
                   title: "Splatoon",
                   desc: "Battle online with friends using our lag-free connection.",
                 },
