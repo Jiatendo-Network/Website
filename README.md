@@ -1,3 +1,3 @@
-- [ ] Jiatendo
+Jiatendo
 
 Website for Jiatendo Network

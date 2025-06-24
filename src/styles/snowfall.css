@@ -9,7 +9,7 @@
 .snowflake {
   width: 10px;
   height: 10px;
-  background: black;
+  background:#E0F7FF;
   border-radius: 9999px;
   opacity: 0.8;
   animation: wiggleX 7s ease-in-out infinite;
