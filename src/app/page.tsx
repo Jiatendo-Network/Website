@@ -1,6 +1,6 @@
 import About from "@/components/home/About"
-import Faq from "@/components/home/FAQ"
 import Hero from "@/components/home/Hero"
+import Faq from "@/components/home/FaqSection"
 import Team from "@/components/home/Team"
 import Snowfall from "@/components/snow/SnowFall"
 
