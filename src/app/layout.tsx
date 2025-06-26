@@ -9,14 +9,7 @@ import {
   UserButton,
 } from "@clerk/nextjs"
 import Header from "@/components/common/Header"
-import { Righteous } from "next/font/google"
 import Footer from "@/components/common/Footer"
-
-const righteous = Righteous({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-righteous",
-})
 
 export const metadata: Metadata = {
   title: "Jiatendo",
@@ -33,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" className={righteous.variable}>
+      <html lang="en">
         <body>
           <header>
             <Header>
