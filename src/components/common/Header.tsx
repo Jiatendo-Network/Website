@@ -2,8 +2,9 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { BiUser, BiMenu, BiX } from "react-icons/bi"
+import { BiMenu, BiX } from "react-icons/bi"
 import { motion, AnimatePresence } from "framer-motion"
+import Image from "next/image"
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -17,13 +18,16 @@ const navLinks = [
   },
 ]
 
-const Header = () => {
+const Header = ({ children }: { children: React.ReactNode }) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <>
       <div className="fixed top-0 right-0 left-0 flex flex-row items-center justify-between px-4 py-2 bg-[var(--violet)] text-white z-50">
-        <div className="font-righteous text-2xl font-semibold">Jiatendo</div>
+        <div className="flex flex-row items-center gap-2">
+          <Image src="/favicon.ico" alt="Logo" width={30} height={30} />
+          <div className="font-righteous text-2xl font-semibold">Jiatendo</div>
+        </div>
 
         {/* Desktop Nav */}
         <div className="sm:flex flex-row items-center px-4 gap-4 hidden">
@@ -47,7 +51,7 @@ const Header = () => {
               </Link>
             )
           )}
-          <BiUser className="border-2 border-white rounded-full scale-110 hover:scale-120 transition" />
+          {children}
         </div>
 
         {/* Hamburger Icon */}
@@ -55,7 +59,7 @@ const Header = () => {
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <BiX size={24} /> : <BiMenu size={24} />}
           </button>
-          <BiUser className="border-2 border-white rounded-full" />
+          {children}
         </div>
       </div>
 

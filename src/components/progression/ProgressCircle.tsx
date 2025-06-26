@@ -28,10 +28,10 @@ const ProgressCircle = ({
         {/* Actual Circle */}
         <motion.div
           initial={{
-            background: "conic-gradient(#1e293b 0deg, #1e293b 360deg)",
+            background: "conic-gradient(#93c5fd 0deg, #334155 360deg)",
           }}
           animate={{
-            background: `conic-gradient(#6366f1 ${angle}deg, #1e293b ${angle}deg)`,
+            background: `conic-gradient(#60a5fa ${angle}deg, #1e293b ${angle}deg)`,
           }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="absolute top-0 left-0 w-full h-full rounded-full"
@@ -39,7 +39,7 @@ const ProgressCircle = ({
 
         {/* Inner glass circle */}
         <div className="absolute top-2 left-2 w-[88%] h-[88%] rounded-full bg-white/5 backdrop-blur-md flex items-center justify-center border border-white/10">
-          <span className="text-xl font-bold text-indigo-300">
+          <span className="text-xl font-bold text-indigo-100">
             {percentage}%
           </span>
         </div>
