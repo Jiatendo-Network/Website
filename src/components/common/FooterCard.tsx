@@ -1,7 +1,7 @@
 // /components/common/FooterCard.tsx
 "use client"
 import { useState } from "react"
-import Image from "next/image"
+// import Image from "next/image"
 import Link from "next/link"
 
 const FooterCard = () => {
@@ -39,12 +39,12 @@ const FooterCard = () => {
         </div>
 
         {/* Avatar */}
-        <Image
+        {/* <Image
           src="/avatar_no_bg_2.png"
           alt="Floating icon"
           width={150}
           height={150}
-        />
+        /> */}
       </div>
 
       {/* Main card */}
