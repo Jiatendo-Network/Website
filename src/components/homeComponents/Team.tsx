@@ -1,7 +1,7 @@
 // /components/home/Team.tsx
 
 import Image from "next/image"
-import TeamCard from "@/components/home/TeamCard"
+import TeamCard from "@/components/homeComponents/TeamCard"
 
 const teamMembers = [
   {
