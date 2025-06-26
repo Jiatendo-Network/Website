@@ -1,13 +1,5 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
-import {
-  ClerkProvider,
-  SignInButton,
-  SignUpButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs"
 import Header from "@/components/common/Header"
 import Footer from "@/components/common/Footer"
 
@@ -25,28 +17,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <ClerkProvider
-      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
-    >
-      <html lang="en">
-        <body>
-          <header>
-            <Header>
-              <SignedOut>
-                <SignInButton />
-                <SignUpButton />
-              </SignedOut>
-              <SignedIn>
-                <UserButton />
-              </SignedIn>
-            </Header>
-          </header>
-          {children}
-          <footer>
-            <Footer />
-          </footer>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en">
+      <body>
+        <header>
+          <Header />
+        </header>
+        {children}
+        <footer>
+          <Footer />
+        </footer>
+      </body>
+    </html>
   )
 }

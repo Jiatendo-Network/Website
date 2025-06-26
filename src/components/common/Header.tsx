@@ -18,7 +18,7 @@ const navLinks = [
   },
 ]
 
-const Header = ({ children }: { children: React.ReactNode }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -51,7 +51,6 @@ const Header = ({ children }: { children: React.ReactNode }) => {
               </Link>
             )
           )}
-          {children}
         </div>
 
         {/* Hamburger Icon */}
@@ -59,7 +58,6 @@ const Header = ({ children }: { children: React.ReactNode }) => {
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <BiX size={24} /> : <BiMenu size={24} />}
           </button>
-          {children}
         </div>
       </div>
 
