@@ -5,6 +5,12 @@ import jwt from "jsonwebtoken";
 
 const JWT_SECRET = process.env.JWT_SECRET as string;
 
+interface JwtPayload {
+  userId: string;
+  email: string;
+  nickname: string;
+}
+
 export async function GET(req: NextRequest) {
     const auth = req.headers.get("authorization");
     if (!auth || !auth.startsWith("Bearer ")) {
@@ -13,7 +19,7 @@ export async function GET(req: NextRequest) {
 
     const token = auth.split(" ")[1];
     try {
-        const decoded = jwt.verify(token, JWT_SECRET) as any;
+        const decoded = jwt.verify(token, JWT_SECRET) as JwtPayload;
         await dbConnect();
         const user = await User.findById(decoded.userId).select("-password");
         if (!user) return NextResponse.json({ error: "User not found." }, { status: 404 });

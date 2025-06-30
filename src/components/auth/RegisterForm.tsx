@@ -19,8 +19,12 @@ const RegisterForm = () => {
             setTimeout(() => {
                 router.push("/login");
             }, 1200);
-        } catch (err: any) {
-            toast.error(err.message);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                toast.error(err.message);
+            } else {
+                toast.error("An error occurred.");
+            }
         }
     };
 

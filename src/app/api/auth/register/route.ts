@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
         await User.create({ email, password: hashed, nickname });
 
         return NextResponse.json({ message: "User registered successfully." }, { status: 201 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Server error." }, { status: 500 });
     }
 }
