@@ -5,6 +5,8 @@ import Link from "next/link"
 import { BiMenu, BiX } from "react-icons/bi"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
+import { useAuth } from "@/context/AuthContext";
+import { toast } from "sonner";
 
 const navLinks = [
   { name: "HOME", href: "/" },
@@ -15,11 +17,18 @@ const navLinks = [
     name: "DONATION",
     href: "https://buymeacoffee.com/javierofernandez",
     special: true,
-  },
+  }
 ]
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    setIsOpen(false);
+    toast.success("You have been logged out.");
+  };
 
   return (
     <>
@@ -29,7 +38,6 @@ const Header = () => {
           <div className="font-righteous text-2xl font-semibold">Jiatendo</div>
         </div>
 
-        {/* Desktop Nav */}
         <div className="sm:flex flex-row items-center px-4 gap-4 hidden">
           {navLinks.map((link) =>
             link.special ? (
@@ -50,6 +58,37 @@ const Header = () => {
                 <span className="block h-[1px] bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
               </Link>
             )
+          )}
+          {user ? (
+            <>
+              <Link
+                href="/profile"
+                className="w-full py-2 px-2 rounded-md active:bg-white/10 transition-colors"
+              >
+                PROFILE
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="w-full py-2 px-2 rounded-md bg-blue-700 text-white mt-2"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <div>
+              <Link
+                href="/login"
+                className="w-full py-2 px-2 rounded-md active:bg-white/10 transition-colors"
+              >
+                LOGIN
+              </Link>
+              <Link
+                href="/register"
+                className="w-full py-2 px-2 rounded-md bg-blue-700 text-white mt-2"
+              >
+                REGISTER
+              </Link>
+            </div>
           )}
         </div>
 
@@ -89,6 +128,37 @@ const Header = () => {
                   {link.name}
                 </Link>
               )
+            )}
+            {user ? (
+              <>
+                <Link
+                  href="/profile"
+                  className="w-full py-2 px-2 rounded-md active:bg-white/10 transition-colors"
+                >
+                  PROFILE
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="w-full py-2 px-2 rounded-md bg-blue-700 text-white mt-2"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <div>
+                <Link
+                  href="/login"
+                  className="w-full py-2 px-2 rounded-md active:bg-white/10 transition-colors"
+                >
+                  LOGIN
+                </Link>
+                <Link
+                  href="/register"
+                  className="w-full py-2 px-2 rounded-md bg-blue-700 text-white mt-2"
+                >
+                  REGISTER
+                </Link>
+              </div>
             )}
           </motion.div>
         )}

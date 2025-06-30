@@ -1,7 +1,9 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
+import { AuthProvider } from "@/context/AuthContext";
 import Header from "@/components/common/Header"
 import Footer from "@/components/common/Footer"
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "Jiatendo",
@@ -17,16 +19,19 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <header>
-          <Header />
-        </header>
-        {children}
-        <footer>
-          <Footer />
-        </footer>
-      </body>
-    </html>
+    <AuthProvider>
+      <Toaster richColors position="top-right" closeButton />
+      <html lang="en">
+        <body>
+          <header>
+            <Header />
+          </header>
+          {children}
+          <footer>
+            <Footer />
+          </footer>
+        </body>
+      </html>
+    </AuthProvider>
   )
 }
