@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
         );
 
         return NextResponse.json({ token }, { status: 200 });
-    } catch (error) {
+    } catch {
         return NextResponse.json({ error: "Server error." }, { status: 500 });
     }
 }

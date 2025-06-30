@@ -18,8 +18,12 @@ const LoginForm = () => {
             setTimeout(() => {
                 router.push("/profile");
             }, 1000);
-        } catch (err: any) {
-            toast.error(err.message);
+        } catch (err: unknown) {
+            if (err instanceof Error) {
+                toast.error(err.message);
+            } else {
+                toast.error("An error occurred.");
+            }
         }
     };
 
@@ -55,7 +59,7 @@ const LoginForm = () => {
                 {loading ? "Logging in..." : "Login"}
             </button>
             <div className="text-blue-300 text-center mt-2">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <a href="/register" className="underline hover:text-blue-400">
                     Register
                 </a>
