@@ -1,13 +1,13 @@
 // /components/common/FooterCard.tsx
-"use client"
-import { useState } from "react"
-// import Image from "next/image"
-import Link from "next/link"
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const FooterCard = () => {
-  const [showDialog, setShowDialog] = useState(false)
+  const [showDialog, setShowDialog] = useState(false);
 
-  const toggleDialog = () => setShowDialog(!showDialog)
+  const toggleDialog = () => setShowDialog(!showDialog);
 
   return (
     <div className="relative w-fit">
@@ -48,7 +48,16 @@ const FooterCard = () => {
       </div>
 
       {/* Main card */}
-      <div className="relative bg-[#6B2DCF] w-full sm:w-[300px] h-auto flex-shrink-0 rounded-xl p-4 pt-10 text-white z-20">
+      <div className="relative bg-blue-500 w-full sm:w-[300px] h-auto flex-shrink-0 rounded-xl p-4 pt-10 text-white z-20">
+        <div className="absolute -top-23 left-4/5 -translate-x-1/2 w-28 h-28">
+          <Image
+            src="/avatar_no_bg.png"
+            alt="Jia"
+            width={100}
+            height={100}
+            className="object-contain"
+          />
+        </div>
         <h2 className="font-bold text-xl mb-2 text-center">
           Want to get the latest updates? <br />
           Join our Discord server!
@@ -61,7 +70,7 @@ const FooterCard = () => {
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FooterCard
+export default FooterCard;
