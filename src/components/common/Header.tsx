@@ -14,6 +14,7 @@ const navLinks = [
   { name: "PROGRESSION", href: "/progression" },
   { name: "BLOG", href: "https://jiatendo.pythonanywhere.com/" },
   { name: "FORUM", href: "/" },
+  { name: "SUPPORTLIST", href: "/" },
   {
     name: "DONATION",
     href: "https://buymeacoffee.com/javierofernandez",
