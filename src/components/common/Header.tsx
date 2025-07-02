@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useCallback } from "react"
-import Link from "next/link"
-import { BiMenu, BiX } from "react-icons/bi"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
+import { useState, useCallback } from "react";
+import Link from "next/link";
+import { BiMenu, BiX } from "react-icons/bi";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "sonner";
 import { FaUserCircle } from "react-icons/fa";
@@ -18,11 +18,11 @@ const navLinks = [
     name: "DONATION",
     href: "https://buymeacoffee.com/javierofernandez",
     special: true,
-  }
-]
+  },
+];
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
 
   const handleLogout = useCallback(() => {
@@ -128,7 +128,9 @@ const Header = () => {
             <div className="flex items-center justify-between px-4 py-4 border-b border-blue-900">
               <div className="flex items-center gap-2">
                 <Image src="/favicon.ico" alt="Logo" width={28} height={28} />
-                <span className="font-righteous text-xl font-semibold">Jiatendo</span>
+                <span className="font-righteous text-xl text-white font-semibold">
+                  Jiatendo
+                </span>
               </div>
               <button
                 aria-label="Close menu"
@@ -176,7 +178,7 @@ const Header = () => {
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
