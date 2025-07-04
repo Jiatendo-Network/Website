@@ -13,6 +13,8 @@ interface AuthContextType {
     login: (email: string, password: string) => Promise<void>;
     register: (email: string, password: string, nickname: string) => Promise<void>;
     logout: () => void;
+    requestReset: (email: string) => Promise<void>;
+    resetPassword: (email: string, token: string, password: string) => Promise<void>
     loading: boolean;
 }
 
@@ -51,39 +53,96 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             setUser(null);
             setToken(null);
             localStorage.removeItem("token");
+        } finally {
+            setLoading(false)
         }
-        setLoading(false);
     };
 
     const login = async (email: string, password: string) => {
-        setLoading(true);
-        const res = await fetch("/api/auth/login", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password }),
-        });
-        if (!res.ok) throw new Error("Invalid credentials");
-        const data = await res.json();
-        setToken(data.token);
-        localStorage.setItem("token", data.token);
-        await fetchProfile(data.token);
-        setLoading(false);
+        try {
+            setLoading(true);
+            const res = await fetch("/api/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password }),
+            });
+            if (!res.ok) throw new Error("Invalid credentials");
+            const data = await res.json();
+            setToken(data.token);
+            localStorage.setItem("token", data.token);
+            await fetchProfile(data.token);
+        }
+        catch (error) {
+            console.error(error)
+            throw error
+        }
+        finally {
+            setLoading(false);
+        }
     };
 
     const register = async (email: string, password: string, nickname: string) => {
-        setLoading(true);
-        const res = await fetch("/api/auth/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password, nickname }),
-        });
-        if (!res.ok) {
-            const data = await res.json();
-            setLoading(false);
-            throw new Error(data.error || "Registration failed");
+        try {
+            setLoading(true);
+            const res = await fetch("/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ email, password, nickname }),
+            });
+            if (!res.ok) {
+                const data = await res.json();
+                setLoading(false);
+                throw new Error(data.error || "Registration failed");
+            }
         }
-        setLoading(false);
+        catch (error) {
+            console.error(error)
+            throw error
+        }
+        finally {
+            setLoading(false);
+        }
     };
+
+    const requestReset = async (email: string) => {
+        try {
+            setLoading(true)
+            await fetch('/api/auth/forgot', {
+                method: "POST",
+                body: JSON.stringify({
+                    email
+                })
+            })
+        }
+        catch (error) {
+            console.error(error)
+            throw error
+        }
+        finally {
+            setLoading(false)
+        }
+    }
+
+    const resetPassword = async (email: string, token: string, password: string) => {
+        try {
+            setLoading(true)
+            await fetch('/api/auth/reset', {
+                method: "POST",
+                body: JSON.stringify({
+                    email,
+                    token,
+                    password
+                })
+            })
+        }
+        catch (error) {
+            console.error(error)
+            throw error
+        }
+        finally {
+            setLoading(false)
+        }
+    }
 
     const logout = () => {
         setUser(null);
@@ -92,7 +151,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, token, login, register, logout, loading }}>
+        <AuthContext.Provider value={{ user, token, login, register, logout, loading, requestReset, resetPassword }}>
             {children}
         </AuthContext.Provider>
     );
