@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import ResetPasswordEmail from "@/components/email-template/ForgotPasswordTemplate";
 import dbConnect from "@/utils/dbConnect";
 import User from "@/models/User";
 import { v4 as uuidv4 } from "uuid";
@@ -27,8 +28,8 @@ export async function POST(req: NextRequest) {
 
         await user.save()
 
-        const mailContent = `Follow this link to reset your password: ${req.nextUrl.origin}/reset?token=${token}&email=${email}`
-        const mailSent = await sendMail("Reset your password", email, mailContent)
+        // const mailContent = `Follow this link to reset your password: ${req.nextUrl.origin}/reset?token=${token}&email=${email}`
+        const mailSent = await sendMail("Reset your password", email, ResetPasswordEmail({ userFirstname: user.nickname, resetPasswordLink: `${req.nextUrl.origin}/reset?token=${token}&email=${email}` }))
         console.log("Mail sent:", mailSent)
 
         return NextResponse.json({ success: true }, { status: 200 });
