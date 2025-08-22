@@ -67,13 +67,13 @@ const Hero = () => {
             </Link>
             <Link
               className="p-4 rounded-full bg-gray-100/60 text-orange-600 text-3xl hover:bg-gray-500 transition"
-              href="https://reddit.com/r/JiatendoNetwork/"
+              href="https://www.reddit.com/r/JiatendoNetworkXD/"
             >
               <FaReddit />
             </Link>
             <Link
               className="p-4 rounded-full bg-gray-100/60 text-purple-500 text-3xl hover:bg-gray-500 transition"
-              href="https://reddit.com/r/JiatendoNetwork/"
+              href="https://www.reddit.com/r/JiatendoNetworkXD/"
             >
               <FaTwitch />
             </Link>
